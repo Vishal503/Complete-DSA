@@ -18,10 +18,11 @@ int height(node *root){
 }
 int main(){
     node *root = new node(10);
-    root->right = new node(2);
+    root->right = new node(112);
     root->left =  new node(12);
     root->right->right = new node(19);
     root->right->right->right = new node(20);
+    root->right->left->right = new node(90);
     cout<<height(root);
     return 0;
 }
