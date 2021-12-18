@@ -7,7 +7,7 @@ int binary(int arr[],int n,int x,int start,int end){
         if(arr[mid]==x)
             return mid;
         if(arr[mid]>x)
-            return binary(arr,n,x,0,n-1);
+            return binary(arr,n,x,0,mid-1);
         else
             return binary(arr,n,x,mid+1,n-1);
     }
