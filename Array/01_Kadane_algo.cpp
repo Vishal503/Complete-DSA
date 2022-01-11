@@ -1,32 +1,25 @@
+//this fails in only negative element
+
 #include <bits/stdc++.h>
 using namespace std;
-void maxsums(int arr[],int n){
+int maxsumArray(int arr[],int n){
     int maxsum = 0;
-    int curr = -1;
+    int currsum = 0;
+    
     for(int i=0;i<n;i++){
-        int count =0;
-        for(int j=0;j<n;j++){
-            if(arr[i]==arr[j])
-            count++;
+        currsum = currsum + arr[i];
+        if(currsum>maxsum){
+            maxsum = currsum;
         }
-        if(count>maxsum){
-            maxsum = count;
-            curr = i;
+        if(currsum<0){
+            currsum = 0;
         }
     }
-    if(maxsum>n/2){
-        cout<<arr[curr]<<endl;
-    }
-    else{
-        cout<<"No";
-    }
+    return maxsum;
 }
-int main()
-{
-    int arr[] = { 1, 1, 2, 1, 3, 5, 1 };
-    int n = sizeof(arr) / sizeof(arr[0]);
-
-    maxsums(arr, n);
- 
+int main(){
+    int n = 5;
+    int arr[] = {5,4,-1,7,8};
+    cout<<maxsumArray(arr,n);
     return 0;
 }

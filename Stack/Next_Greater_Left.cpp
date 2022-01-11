@@ -4,13 +4,13 @@ void st(int arr[],int n)
 {
     stack<int> s;
     s.push(arr[0]);
-    for(int i=1;i<n;i++)
+    for(int i=0;i<n;i++)
     {
         if(s.empty()){
             s.push(arr[i]);
             continue;
         }
-        while(s.empty()==false &&s.top()<arr[i]){
+        while(s.empty()==false &&s.top()>arr[i]){
             cout<<arr[i]<<" ";
             s.pop();
         }
@@ -24,7 +24,7 @@ void st(int arr[],int n)
 
 int main(){
     int n = 4;
-    int arr[] = {11, 13, 21, 3};
+    int arr[] = {1,3,2,4};
     st(arr,n);
     return 0;
 }

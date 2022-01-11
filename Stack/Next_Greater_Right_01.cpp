@@ -15,8 +15,8 @@ void nor(int arr[],int n){
     
 }
 int main(){
-    int n = 5;
-    int arr[] = {13,7,6,12,13};
+    int n = 4;
+    int arr[] = {11, 13, 21, 3};
     nor(arr,n);
     return 0;
 }
